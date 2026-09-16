@@ -2,11 +2,13 @@
 
 Integration tools for [VRAMGlass hosted GPU price widgets](https://vramglass.com/widget), maintained by [voltwake](https://github.com/voltwake).
 
-## Availability
+## Install
 
-The SDK source is available on GitHub under MIT. npm publication is postponed; `@vramglass/widgets` is not yet available from the npm registry. To try it now, clone this repository and run the example below.
+```sh
+npm install @vramglass/widgets
+```
 
-The package import shown below is the intended API for a future npm release.
+The SDK source is available on GitHub under MIT.
 
 ## What this package does
 

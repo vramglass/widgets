@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>VRAMGlass SDK example</title>
+<style>body{font-family:system-ui,sans-serif;max-width:720px;margin:40px auto;padding:0 16px}#cards{display:grid;gap:24px}p{line-height:1.6}</style>
+<h1>VRAMGlass GPU price widgets</h1><p>Local SDK, live hosted rendering and market data.</p><p id="status">Loading…</p><div id="cards"></div>
+<p><a href="https://vramglass.com/widget">Configure your widget</a></p>
+<script type="module">
+import { loadWidgets, createPriceCard } from '../src/index.js';
+try {
+  await Promise.all([loadWidgets(), loadWidgets()]);
+  for (const theme of ['light','dark']) {
+    document.querySelector('#cards').append(createPriceCard({gpu:'rtx-3090',market:'ebay',theme}));
+  }
+  document.querySelector('#status').textContent = 'Widget script loaded.';
+} catch (error) { document.querySelector('#status').textContent = 'Widget unavailable. Please use the configuration link below.'; }
+</script></html>
